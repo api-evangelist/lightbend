@@ -1,0 +1,59 @@
+generated: '2026-07-19'
+method: searched
+sources:
+  - https://doc.akka.io/reference/cli/akka-cli/index.html
+  - https://doc.akka.io/sdk/integrations/identity-and-security.html
+  - https://doc.akka.io/operations/projects/secrets.html
+docs: https://doc.akka.io/sdk/integrations/identity-and-security.html
+notes: >-
+  Lightbend (dba Akka) publishes no public OpenAPI for its control plane, so this profile is captured from the CLI
+  reference and the SDK identity/security documentation rather than derived from securitySchemes. Two distinct
+  surfaces exist: platform/control-plane authentication (how you authenticate the CLI and CI against Akka), and
+  service authentication (how the services you build on Akka authenticate their own callers).
+summary:
+  types: [interactive-login, token, jwt, mtls, acl]
+  api_key_in: []
+  oauth2_flows: []
+platform_auth:
+  description: Authenticating the Akka CLI, CI/CD and the console against the Akka platform.
+  mechanisms:
+    - name: Interactive login
+      command: akka auth login
+      description: Browser-based interactive login binding the CLI to a user account.
+    - name: Service / project tokens
+      command: akka auth tokens
+      related: [akka auth use-token, akka projects tokens]
+      description: Long-lived tokens for non-interactive use in CI/CD pipelines.
+    - name: Container registry credentials
+      command: akka auth container-registry
+      related: [akka docker add-credentials]
+      description: Credentials for the Akka container registry and external registries.
+    - name: SDK download token
+      command: akka code token
+      description: Token configured during dev-env setup to resolve Akka SDK dependencies.
+  contexts:
+    file: ~/.akka/config.yaml
+    commands: [akka config use-context, akka config current-context]
+  console: https://console.akka.io/login
+service_auth:
+  description: Authenticating callers of the services a developer builds and deploys on Akka.
+  mechanisms:
+    - name: ACLs
+      annotation: "@Acl"
+      description: Declarative access control on HTTP, gRPC and MCP endpoints, scoped by principal (e.g. Acl.Principal.ALL, internet, service).
+    - name: JWT / JWKS
+      commands: [akka services jwts, akka services jwks]
+      description: Per-service JWT validation configuration and JWKS key set management.
+    - name: TLS certificates
+      docs: https://doc.akka.io/operations/tls-certificates.html
+      description: Configuring and managing TLS certificates, including client certificate validation on exposed routes.
+    - name: Secrets
+      docs: https://doc.akka.io/operations/projects/secrets.html
+      commands: [akka secrets create, akka secrets external]
+      description: Built-in secret storage with Azure Key Vault integration for externally managed secrets.
+authorization:
+  model: role-bindings
+  commands: [akka roles list, akka roles add-binding, akka roles delete-binding, akka roles invitations]
+  scoped_to: [organization, project]
+oauth2: false
+oauth_scopes: false
