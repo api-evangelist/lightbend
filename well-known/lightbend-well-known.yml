@@ -1,0 +1,39 @@
+generated: '2026-07-19'
+method: searched
+notes: >-
+  Probed the /.well-known/ discovery surface on every Lightbend (dba Akka) host. No /.well-known/ document is
+  published on any host. console.akka.io returns HTTP 200 for /.well-known/openid-configuration but the body is the
+  console single-page-app HTML shell, not an OIDC discovery document, so it is recorded as not published. A machine-
+  readable llms.txt IS published on both akka.io and doc.akka.io and is captured separately in llms/.
+hosts:
+  - host: https://akka.io
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+  - host: https://doc.akka.io
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+  - host: https://console.akka.io
+    documents:
+      - path: /.well-known/openid-configuration
+        status: 200
+        published: false
+        note: SPA HTML shell returned, not an OIDC discovery document.
+related:
+  - path: /llms.txt
+    host: https://akka.io
+    status: 200
+    file: ../llms/lightbend-llms.txt
+  - path: /llms.txt
+    host: https://doc.akka.io
+    status: 200
+    note: Larger SDK documentation index; not saved (akka.io/llms.txt captured as canonical).

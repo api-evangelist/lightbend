@@ -1,0 +1,54 @@
+generated: '2026-07-19'
+method: searched
+source: https://doc.akka.io/reference/release-notes.html
+url: https://doc.akka.io/reference/release-notes.html
+scheme: semver
+current:
+  sdk: 3.6.0
+  cli: 3.0.65
+  runtime: 1.6.3
+notes: Recent window only; the live release notes page is the source of truth.
+entries:
+  - component: Akka SDK
+    version: 3.6.0
+    date: '2026-05'
+    breaking: true
+    highlights:
+      - Autonomous agents
+      - Rewritten multi-agent orchestration documentation
+      - Support for large session memory
+      - Removal of APIs deprecated since SDK 3.4.x
+      - Runtime bumped to 1.6.3 with a Java 25 base image and Langchain4J 1.15.0
+  - component: Akka CLI
+    version: 3.0.64
+    date: '2026-05'
+    breaking: false
+    highlights:
+      - Support for autonomous agents
+  - component: Akka SDK
+    version: 3.5.19
+    date: '2026-04'
+    breaking: false
+    highlights:
+      - Object store support (S3, GCS, Azure)
+      - Azure OpenAI and MistralAI model providers
+      - Prompt caching for Anthropic and Bedrock
+      - Workflow termination
+      - Session memory interceptor
+      - Custom OpenTelemetry metrics
+  - component: Akka SDK
+    version: 3.5.18
+    date: '2026-04'
+    breaking: false
+    highlights:
+      - Automatic expiry for entities
+      - Key Value Entity notifications
+      - Consumer testkit improvements
+  - component: Akka SDK
+    version: 3.5.16
+    date: '2026-03'
+    breaking: false
+    highlights:
+      - Google Vertex AI model support
+      - Access to deployed services from dev mode
+      - Notifications for event sourced entities

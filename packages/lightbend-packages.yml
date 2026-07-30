@@ -1,0 +1,80 @@
+generated: '2026-07-19'
+method: searched
+sources:
+  - https://repo1.maven.org/maven2/io/akka/
+  - https://search.maven.org/solrsearch/select?q=g:com.typesafe.akka
+  - https://doc.akka.io/operations/cli/installation.html
+  - https://www.npmjs.com/package/@lightbend/akkaserverless-javascript-sdk
+notes: >-
+  Lightbend (dba Akka) distributes the current Akka SDK for Java as Maven artifacts under the io.akka group, the Akka
+  CLI as a Homebrew tap / Debian package / install script, and the legacy JVM reactive stack under the
+  com.typesafe.akka group. Registries probed with no first-party result: PyPI, NuGet, pkg.go.dev, RubyGems,
+  Packagist, crates.io.
+packages:
+  - language: java
+    registry: maven
+    name: io.akka:akka-javasdk-parent
+    version: 3.6.0
+    url: https://repo1.maven.org/maven2/io/akka/akka-javasdk-parent/
+    install: "<parent><groupId>io.akka</groupId><artifactId>akka-javasdk-parent</artifactId><version>3.6.0</version></parent>"
+    official: true
+    description: Parent POM for the Akka SDK for Java — agents, orchestration, memory, streaming, endpoints.
+  - language: java
+    registry: maven
+    name: io.akka:akka-javasdk-maven
+    url: https://repo1.maven.org/maven2/io/akka/akka-javasdk-maven/
+    official: true
+    description: Maven tooling for the Akka SDK for Java.
+  - language: java
+    registry: maven
+    name: io.akka:akka-javasdk-archetype
+    url: https://repo1.maven.org/maven2/io/akka/akka-javasdk-archetype/
+    official: true
+    description: Maven archetype for scaffolding a new Akka SDK service.
+  - language: scala
+    registry: maven
+    name: com.typesafe.akka:akka-actor
+    url: https://search.maven.org/search?q=g:com.typesafe.akka
+    official: true
+    legacy: true
+    description: >-
+      Legacy Akka actor toolkit for the JVM (906 published artifacts under com.typesafe.akka, including akka-http
+      10.5.3, akka-streams, akka-cluster, akka-persistence, akka-osgi 2.7.1). Superseded by the Akka SDK.
+  - language: javascript
+    registry: npm
+    name: "@lightbend/akkaserverless-javascript-sdk"
+    url: https://www.npmjs.com/package/@lightbend/akkaserverless-javascript-sdk
+    install: npm install @lightbend/akkaserverless-javascript-sdk
+    official: true
+    legacy: true
+    description: Legacy Akka Serverless JavaScript SDK published under the Lightbend npm scope; superseded.
+  - language: javascript
+    registry: npm
+    name: "@lightbend/create-akkasls-entity"
+    url: https://www.npmjs.com/package/@lightbend/create-akkasls-entity
+    official: true
+    legacy: true
+    description: Legacy Akka Serverless entity scaffolder.
+binaries:
+  - name: akka
+    kind: cli
+    version: 3.0.65
+    distributions:
+      - registry: homebrew
+        name: akka/brew/akka
+        install: brew install akka/brew/akka
+        official: true
+      - registry: apt
+        name: akka
+        repo: https://downloads.akka.io/setup.deb.sh
+        official: true
+      - registry: script
+        url: https://doc.akka.io/install-cli.sh
+        official: true
+registries_probed_no_result:
+  - pypi
+  - nuget
+  - pkg.go.dev
+  - rubygems
+  - packagist
+  - crates.io

@@ -1,0 +1,42 @@
+generated: '2026-07-19'
+method: searched
+sources:
+  - https://doc.akka.io/reference/release-notes.html
+  - https://status.akka.io/
+  - https://trust.akka.io/availability-guarantee
+  - https://doc.akka.io/reference/security-announcements/
+versioning:
+  scheme: semver
+  docs: https://doc.akka.io/reference/release-notes.html
+  components:
+    - name: Akka SDK
+      current: 3.6.0
+    - name: Akka CLI
+      current: 3.0.65
+    - name: Akka Runtime
+      current: 1.6.3
+deprecation:
+  policy_url: https://doc.akka.io/reference/release-notes.html
+  sunset_header: null
+  practice: >-
+    Deprecated APIs are announced in the release notes and removed in a subsequent minor release — Akka SDK 3.6.0
+    removed APIs deprecated since SDK 3.4.x. No RFC 8594 Sunset/Deprecation header contract is published.
+sla:
+  url: https://trust.akka.io/availability-guarantee
+  uptime_target: 99.9999%
+  service_credits: Up to 25% for uptime below 99.00% or latency percentile drops below 80%.
+  rto: <1 minute
+  rpo: 0 bytes
+  notes: Active-active multi-region HA/DR; a resilience guarantee backed by indemnities is published separately at https://trust.akka.io/resilience-guarantee.
+status_page: https://status.akka.io/
+security_announcements: https://doc.akka.io/reference/security-announcements/
+company_lifecycle:
+  legal_name: Lightbend, Inc. dba Akka
+  rebrand:
+    from: Lightbend
+    to: Akka
+    evidence: https://www.lightbend.com/ returns HTTP 301 to https://akka.io/
+  product_pivot: >-
+    From the open-source Akka actor library / JVM reactive toolkit to the Akka agentic systems platform. The
+    akka.io/llms.txt states the company "has pivoted from that actor library to the agentic systems platform".
+deprecated_operations: []

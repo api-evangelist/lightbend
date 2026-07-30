@@ -1,0 +1,28 @@
+{
+  "repo": "lightbend",
+  "feeds": [
+    {
+      "source": "https://discuss.akka.io/",
+      "feed_url": "https://discuss.akka.io/",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    },
+    {
+      "source": "https://akka.io/blog/rss.xml",
+      "feed_url": "https://akka.io/blog/rss.xml",
+      "title": "",
+      "saved": 0,
+      "method": "feed"
+    },
+    {
+      "source": "https://akka.io/blog",
+      "feed_url": "https://akka.io/blog/rss.xml",
+      "title": "",
+      "saved": 0,
+      "method": "discovered"
+    }
+  ],
+  "post_count": 10,
+  "fetched": "2026-07-25T15:00:33Z"
+}

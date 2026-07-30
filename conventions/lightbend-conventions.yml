@@ -1,0 +1,71 @@
+generated: '2026-07-19'
+method: searched
+sources:
+  - https://doc.akka.io/sdk/integrations/apis-and-protocols.html
+  - https://doc.akka.io/sdk/consuming-producing.html
+  - https://doc.akka.io/sdk/mcp-endpoints.html
+  - https://doc.akka.io/operations/observability-and-monitoring/index.html
+  - https://doc.akka.io/reference/cli/akka-cli/index.html
+notes: >-
+  Lightbend (dba Akka) does not operate a public REST API of its own; its cross-cutting semantics are the runtime
+  contract the platform gives to services built on it, plus the CLI/control-plane conventions. Captured accordingly —
+  the "API" whose conventions these are is the Akka runtime, not a hosted product API.
+authentication:
+  style: acl-plus-jwt
+  see: authentication/lightbend-authentication.yml
+protocols:
+  http:
+    rest: true
+    openapi_generation: true
+    openapi_docs: https://doc.akka.io/sdk/http-endpoints.html
+    websockets: true
+  grpc:
+    enabled: true
+    docs: https://doc.akka.io/sdk/grpc-endpoints.html
+    transports: [http2, grpc-web]
+  mcp:
+    enabled: true
+    spec_version: '2025-03-26'
+    transport: streamable-http
+    default_path: /mcp
+  agent_protocols: [A2A, ACP, MCP]
+idempotency:
+  header: null
+  supported: false
+  delivery_semantics: at-least-once
+  detail: >-
+    Akka does NOT provide an idempotency-key request contract. All consumers use at-least-once delivery semantics and
+    the documentation is explicit that "Deduplication is not handled automatically by Akka. You must implement
+    deduplication logic explicitly in your consumer code." Guidance on idempotent updates and sequence-number tracking
+    is published under Message deduplication.
+  docs: https://doc.akka.io/sdk/dev-best-practices.html#message-deduplication
+state_and_execution:
+  models: [event-sourced-entity, key-value-entity, workflow, view, timer, consumer, agent]
+  durable_execution: true
+  multi_region: active-active
+  docs: https://doc.akka.io/concepts/multi-region.html
+versioning:
+  scheme: semver
+  see: lifecycle/lightbend-lifecycle.yml
+error_envelope:
+  format: null
+  rfc9457: false
+  detail: No published API-level error envelope; the SDK models failures as declarative effects and typed exceptions in application code.
+observability:
+  signals: [metrics, logs, traces]
+  standard: opentelemetry
+  export: true
+  docs: https://doc.akka.io/operations/observability-and-monitoring/observability-exports.html
+  commands: [akka logs, akka services logging]
+rate_limiting:
+  documented: false
+cli_output:
+  formats: [text, json, json-compact, go-template]
+  flag: --output
+  detail: Every Akka CLI command supports machine-readable JSON output, which is what makes the CLI usable as an MCP toolset.
+cross_links:
+  authentication: authentication/lightbend-authentication.yml
+  lifecycle: lifecycle/lightbend-lifecycle.yml
+  conformance: conformance/lightbend-conformance.yml
+  mcp: mcp/lightbend-mcp.yml
+  cli: cli/lightbend-cli.yml

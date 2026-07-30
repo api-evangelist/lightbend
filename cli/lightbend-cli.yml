@@ -1,0 +1,104 @@
+generated: '2026-07-19'
+method: searched
+source: https://doc.akka.io/reference/cli/akka-cli/index.html
+name: akka
+description: >-
+  The Akka CLI is the first-party command line interface for Lightbend (dba Akka). It authenticates against the Akka
+  platform, scaffolds and builds services, deploys and operates them across projects/regions, manages secrets, routes
+  and container registries, and serves an MCP server exposing its own operations as tools.
+version: 3.0.65
+docs:
+  install: https://doc.akka.io/operations/cli/installation.html
+  usage: https://doc.akka.io/operations/cli/using-cli.html
+  reference: https://doc.akka.io/reference/cli/akka-cli/index.html
+  completion: https://doc.akka.io/operations/cli/command-completion.html
+install:
+  - platform: macos
+    method: homebrew
+    command: brew install akka/brew/akka
+  - platform: linux
+    method: apt
+    command: |
+      curl -1sLf 'https://downloads.akka.io/setup.deb.sh' | sudo -E bash
+      sudo apt install akka
+  - platform: linux
+    method: script
+    command: curl -sL https://doc.akka.io/install-cli.sh | bash
+commands:
+  - group: auth
+    description: Authenticate against the Akka platform.
+    subcommands: [login, logout, signup, current-login, tokens, use-token, container-registry]
+  - group: code
+    description: Scaffold and check Akka projects, and wire AI coding assistants.
+    subcommands: [init, check, context-update, token]
+  - group: config
+    description: Manage CLI configuration and contexts.
+    subcommands: [get, set, list, clear, clear-cache, use-context, current-context, delete-context, rename-context, list-contexts, get-organization, get-project]
+  - group: container-registry
+    description: Manage the Akka container registry.
+    subcommands: [list, list-images, list-tags, delete-image, push, print]
+  - group: docker
+    description: Manage docker credentials for external registries.
+    subcommands: [add-credentials, list-credentials, remove-credentials]
+  - group: local
+    description: Run and inspect Akka services locally.
+    subcommands: [start, stop, status, console, cluster, services, remote]
+  - group: logs
+    description: View service logs.
+  - group: mcp
+    description: "[Incubating] MCP server for AI agent integration."
+    subcommands: [serve]
+  - group: projects
+    description: Manage Akka projects.
+    subcommands: [tokens, update]
+  - group: regions
+    description: Work with Akka deployment regions.
+    subcommands: [list]
+  - group: roles
+    description: Manage role bindings and invitations.
+    subcommands: [list, add-binding, delete-binding, list-bindings, invitations]
+  - group: routes
+    description: Manage HTTP routes exposing services.
+    subcommands: [create, get, list, edit, update, delete, export]
+  - group: secrets
+    description: Manage service secrets.
+    subcommands: [create, get, list, delete, external]
+  - group: service-configs
+    description: Manage reusable service configuration.
+    subcommands: [create, get, list, delete]
+  - group: services
+    description: Deploy and operate Akka services.
+    subcommands: [deploy, apply, get, list, edit, delete, export, expose, unexpose, pause, resume, restart, restore, proxy, components, connectivity, data, views, logging, jwks, jwts, set-config, remove-config]
+  - group: specify
+    description: Akka Specify — spec-driven delivery onto the platform.
+    subcommands: [init]
+  - group: completion
+    description: Generate shell completion scripts.
+  - group: docs
+    description: Open the Akka documentation.
+  - group: version
+    description: Print the CLI version.
+global_flags:
+  - name: --config
+    default: ~/.akka/config.yaml
+  - name: --cache-file
+    default: ~/.akka/cache.yaml
+  - name: --context
+  - name: --output
+    values: [text, json, json-compact, "go-template="]
+    default: text
+  - name: --timeout
+    default: 10s
+  - name: --use-grpc-web
+    description: Use grpc-web when talking to Akka APIs (for firewalls that do not support HTTP/2).
+  - name: --disable-prompt
+    env: AKKA_DISABLE_PROMPTS
+  - name: --quiet
+  - name: --verbose
+key_flows:
+  - name: Bootstrap a project from a sample
+    command: akka code init --name helloworld-agent --repo akka-samples/helloworld-agent.git
+  - name: Run the local dev console
+    command: akka local console
+  - name: Serve the CLI as an MCP server
+    command: akka mcp serve --toolsets projects,services

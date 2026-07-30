@@ -1,0 +1,46 @@
+generated: '2026-07-19'
+method: searched
+sources:
+  - https://doc.akka.io/getting-started/set-up-dev-env.html
+  - https://doc.akka.io/reference/cli/akka-cli/index.html
+  - https://doc.akka.io/operations/cli/using-cli.html
+notes: >-
+  Lightbend (dba Akka) publishes no hosted test/live key separation and no magic test values — it is not a payments or
+  messaging provider. Its sandbox is a full local runtime: `akka local` runs the Akka runtime, a local console and the
+  service under development on the developer machine (or in a prebuilt container), against real SDK dependencies.
+  No test credentials are published, and none are invented here.
+test_live_separation:
+  key_prefixes: []
+  modes: [local, deployed]
+  detail: >-
+    Local mode runs the runtime on the developer machine with no platform project required for basic flows; deployed
+    mode targets a real project/region via the CLI context (`akka config use-context`). Since SDK 3.5.16, services
+    running in local dev mode can also reach deployed services.
+local_runtime:
+  commands:
+    - akka local start
+    - akka local stop
+    - akka local status
+    - akka local console
+    - akka local services
+    - akka local cluster
+    - akka local remote
+  console: Local web console for inspecting components, state and events while developing.
+containerized:
+  docker_image: prebuilt Akka dev container bundling Java 21, Maven, the Akka CLI and pre-cached SDK dependencies
+  example: docker exec -w /workspace akka-dev mvn compile exec:java
+  docs: https://doc.akka.io/getting-started/set-up-dev-env.html
+scaffolding:
+  command: akka code init --name helloworld-agent --repo akka-samples/helloworld-agent.git
+  samples_org: https://github.com/akka-samples
+  samples_docs: https://doc.akka.io/getting-started/samples.html
+testing:
+  testkit: true
+  detail: The SDK ships testkits for agents, consumers and entities; consumer testkit improvements landed in SDK 3.5.18.
+  docs: https://doc.akka.io/sdk/testing.html
+prerequisites:
+  - Java 21
+  - Apache Maven 3.9 or later
+  - Akka CLI
+  - Akka download token (via `akka code token`)
+test_values: []

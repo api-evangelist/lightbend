@@ -1,0 +1,106 @@
+generated: '2026-07-19'
+method: searched
+sources:
+  - https://trust.akka.io/
+  - https://doc.akka.io/sdk/integrations/apis-and-protocols.html
+  - https://doc.akka.io/sdk/mcp-endpoints.html
+  - https://doc.akka.io/llms.txt
+notes: >-
+  Conformance asserted from Lightbend's (dba Akka) own published claims on the trust center and the SDK protocol
+  documentation. Certification-backed compliance posture is captured in security/lightbend-trust-center.yml.
+standards:
+  - id: mcp
+    name: Model Context Protocol
+    conforms: true
+    version: '2025-03-26'
+    evidence: >-
+      Akka SDK MCP Endpoints implement the MCP specification 2025-03-26 over stateless Streamable HTTP; the Akka CLI
+      ships an MCP server (akka mcp serve).
+  - id: a2a
+    name: Agent-to-Agent protocol
+    conforms: true
+    evidence: A2A client support is built into the Akka Agent component; see the APIs & protocols docs.
+  - id: acp
+    name: Agent Communication Protocol
+    conforms: true
+    evidence: ACP client support is built into the Akka Agent component; see the APIs & protocols docs.
+  - id: openapi
+    name: OpenAPI
+    conforms: true
+    evidence: Akka HTTP Endpoints generate OpenAPI schema automatically (OpenAPI Endpoint schema).
+  - id: grpc
+    name: gRPC
+    conforms: true
+    evidence: Akka gRPC Endpoints with protocol buffer definitions; the CLI supports grpc-web transport.
+  - id: websocket
+    name: WebSocket
+    conforms: true
+    evidence: WebSocket support built into Akka HTTP Endpoints.
+  - id: opentelemetry
+    name: OpenTelemetry
+    conforms: true
+    evidence: Metrics, logs and traces with OTEL export; custom OpenTelemetry metrics added in Akka SDK 3.5.19.
+  - id: jwt
+    name: JSON Web Tokens / JWKS
+    conforms: true
+    evidence: "CLI exposes `akka services jwks` and `akka services jwts` for service JWT/JWKS configuration."
+  - id: reactive-streams
+    name: Reactive Streams
+    conforms: true
+    evidence: Akka Streams implements the Reactive Streams specification for asynchronous non-blocking backpressure.
+  - id: iso-42001
+    name: ISO/IEC 42001 AI Management System
+    conforms: true
+    evidence: Listed on trust.akka.io.
+  - id: eu-ai-act
+    name: EU Artificial Intelligence Act
+    conforms: true
+    evidence: Listed on trust.akka.io; runtime-embedded governance positioned against EU AI Act requirements.
+  - id: soc2
+    name: AICPA SOC 2
+    conforms: true
+    evidence: SOC 2 Type II (on request) and SOC 3 (public) on trust.akka.io.
+  - id: iso-27001
+    name: ISO/IEC 27001
+    conforms: true
+    evidence: Listed on trust.akka.io.
+  - id: pci-dss
+    name: PCI DSS
+    conforms: true
+    evidence: Listed on trust.akka.io.
+  - id: hipaa
+    name: HIPAA
+    conforms: true
+    evidence: Listed on trust.akka.io.
+  - id: gdpr
+    name: EU GDPR
+    conforms: true
+    evidence: Listed on trust.akka.io alongside UK GDPR, CCPA and the EU-US Data Privacy Framework.
+  - id: dora
+    name: EU Digital Operational Resilience Act
+    conforms: true
+    evidence: Listed on trust.akka.io.
+  - id: nis2
+    name: NIS2 Directive
+    conforms: true
+    evidence: Listed on trust.akka.io.
+  - id: fedramp
+    name: FedRAMP
+    conforms: false
+    evidence: Not listed on trust.akka.io.
+  - id: rfc9457-problem-details
+    name: RFC 9457 Problem Details
+    conforms: false
+    evidence: No published API error contract using application/problem+json was found.
+  - id: fapi
+    name: FAPI
+    conforms: false
+  - id: scim
+    name: SCIM 2.0
+    conforms: false
+  - id: fhir
+    name: FHIR
+    conforms: false
+  - id: odata
+    name: OData
+    conforms: false
