@@ -1,27 +1,128 @@
 aid: lightbend
 name: Lightbend
-description: 'Lightbend is a company surfaced as a portfolio company of bain-capital-ventures and added
-  to the API Evangelist network as a stub for enrichment. Sector: ai-infrastructure. This profile is a
-  lead awaiting the enrichment pipeline.'
+type: Index
+description: >-
+  Lightbend, Inc. (dba Akka) is the company behind the Akka agentic systems platform. Founded as Typesafe by the
+  creators of the Scala language and the Akka actor toolkit, the company built the JVM reactive stack — Akka actors,
+  Akka Streams, Akka HTTP, Akka gRPC, Akka Cluster and Play Framework — before pivoting to a full-stack platform for
+  production agentic AI and rebranding to Akka. The current product line covers the Akka SDK (agents, orchestration,
+  memory, streaming, HTTP/gRPC/MCP endpoints), Akka Automated Operations for multi-region deployment and operations,
+  an in-runtime governance and policy-enforcement engine aligned to the EU AI Act, and Akka Specify, a delivered
+  spec-driven path onto the same platform. lightbend.com now redirects to akka.io; the JVM library API surface is
+  catalogued separately in the api-evangelist akka repository.
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/lightbend.png
 url: https://raw.githubusercontent.com/api-evangelist/lightbend/refs/heads/main/apis.yml
+specificationVersion: '0.20'
+created: '2026-07-17'
+modified: '2026-07-19'
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
-- bain-capital-ventures
-x-tier: stub
-x-tier-reason: portfolio-lead
-specificationVersion: '0.20'
-created: '2026-07-17'
-modified: '2026-07-17'
+  - bain-capital-ventures
+x-legal-name: Lightbend, Inc. dba Akka
+x-dba: Akka
+x-rebranded-to: akka
+x-see-also: https://raw.githubusercontent.com/api-evangelist/akka/refs/heads/main/apis.yml
 tags:
-- Company
-- Ai Infrastructure
+  - Company
+  - Ai Infrastructure
+  - Agentic Ai
+  - Actor Model
+  - Distributed Systems
+  - Reactive
+  - Java
+  - Scala
+  - Orchestration
+  - Ai Governance
 apis: []
 maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
-- FN: APIs.json
-  email: info@apis.io
+  - FN: Kin Lane
+    email: kin@apievangelist.com
+  - FN: APIs.json
+    email: info@apis.io
 common:
-- type: Website
-  url: https://www.lightbend.com/
+  - type: Website
+    url: https://akka.io/
+  - type: DeveloperPortal
+    url: https://doc.akka.io/
+  - type: Documentation
+    url: https://doc.akka.io/
+  - type: APIReference
+    url: https://doc.akka.io/reference/cli/akka-cli/index.html
+  - type: GettingStarted
+    url: https://doc.akka.io/getting-started/index.html
+  - type: Support
+    url: https://support.akka.io/portal/en/home
+  - type: Community
+    url: https://discuss.akka.io/
+  - type: Blog
+    url: https://akka.io/blog
+  - type: BlogRSS
+    url: https://akka.io/blog/rss.xml
+  - type: GitHubOrganization
+    url: https://github.com/akka
+  - type: SignUp
+    url: https://console.akka.io/login
+  - type: Login
+    url: https://console.akka.io/login
+  - type: TermsOfService
+    url: https://akka.io/legal/terms-of-use
+  - type: PrivacyPolicy
+    url: https://akka.io/legal/privacy
+  - type: StatusPage
+    url: https://status.akka.io/
+  - type: ChangeLog
+    url: https://doc.akka.io/reference/release-notes.html
+  - type: TrustCenter
+    url: https://trust.akka.io/
+  - type: Compliance
+    url: https://trust.akka.io/
+  - type: Security
+    url: https://doc.akka.io/reference/security-announcements/
+  - type: LLMsTxt
+    url: llms/lightbend-llms.txt
+  - type: MCPServer
+    url: mcp/lightbend-mcp.yml
+  - type: CLI
+    url: cli/lightbend-cli.yml
+  - type: Packages
+    url: packages/lightbend-packages.yml
+  - type: SDKs
+    url: packages/lightbend-packages.yml
+  - type: WellKnown
+    url: well-known/lightbend-well-known.yml
+  - type: Authentication
+    url: authentication/lightbend-authentication.yml
+  - type: Conventions
+    url: conventions/lightbend-conventions.yml
+  - type: Conformance
+    url: conformance/lightbend-conformance.yml
+  - type: Lifecycle
+    url: lifecycle/lightbend-lifecycle.yml
+  - type: Deprecation
+    url: lifecycle/lightbend-lifecycle.yml
+  - type: DomainSecurity
+    url: security/lightbend-domain-security.yml
+  - type: VulnerabilityDisclosure
+    url: security/lightbend-vulnerability-disclosure.yml
+  - type: Sandbox
+    url: sandbox/lightbend-sandbox.yml
+  - type: ChangeLog
+    url: changelog/lightbend-changelog.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
