@@ -3,52 +3,57 @@ method: searched
 source: https://doc.akka.io/reference/cli/akka-cli/akka_mcp_serve.html
 status: published
 maturity: incubating
-notes: >-
-  Lightbend (dba Akka) ships a first-party MCP server as a subcommand of the Akka CLI. `akka mcp serve` exposes Akka
-  CLI operations as MCP tools over stdio for IDE / desktop MCP clients. It is marked "[Incubating]" in the CLI
-  reference. Separately, the Akka SDK lets developers author their own MCP endpoints in their services
-  (`@McpEndpoint`), served over stateless Streamable HTTP at `/mcp`.
+notes: Lightbend (dba Akka) ships a first-party MCP server as a subcommand of the Akka CLI. `akka mcp
+  serve` exposes Akka CLI operations as MCP tools over stdio for IDE / desktop MCP clients. It is marked
+  "[Incubating]" in the CLI reference. Separately, the Akka SDK lets developers author their own MCP endpoints
+  in their services (`@McpEndpoint`), served over stateless Streamable HTTP at `/mcp`.
 server:
   name: akka
   transport: stdio
   command: akka
   args:
-    - mcp
-    - serve
+  - mcp
+  - serve
   docs: https://doc.akka.io/reference/cli/akka-cli/akka_mcp_serve.html
 client_config:
-  claude_desktop: |
-    { "mcpServers": { "akka": { "command": "akka", "args": ["mcp", "serve"] } } }
+  claude_desktop: '{ "mcpServers": { "akka": { "command": "akka", "args": ["mcp", "serve"] } } }
+
+    '
   verified_clients:
-    - Claude Desktop
-    - VS Code
-    - Cursor
+  - Claude Desktop
+  - VS Code
+  - Cursor
 toolsets:
-  - name: projects
-  - name: services
-  - name: routes
-  - name: descriptor
-  - name: sdd
-  - name: local
-  - name: build
-  - name: git
-  - name: backoffice
-  - name: browser
+- name: projects
+- name: services
+- name: routes
+- name: descriptor
+- name: sdd
+- name: local
+- name: build
+- name: git
+- name: backoffice
+- name: browser
 flags:
-  - name: --toolsets
-    description: Comma-separated list of toolsets to enable (default all).
+- name: --toolsets
+  description: Comma-separated list of toolsets to enable (default all).
 sdk_mcp_endpoints:
   docs: https://doc.akka.io/sdk/mcp-endpoints.html
   spec_version: '2025-03-26'
   transport: streamable-http
   default_path: /mcp
   capabilities:
-    - tools
-    - resources
-    - prompts
+  - tools
+  - resources
+  - prompts
 agent_protocols:
   source: https://doc.akka.io/sdk/integrations/apis-and-protocols.html
   supported:
-    - MCP
-    - A2A
-    - ACP
+  - MCP
+  - A2A
+  - ACP
+deployment:
+  mode: local-stdio
+  verified: searched
+  checked: '2026-08-12'
+  source: catalog MCP census
