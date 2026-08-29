@@ -10,6 +10,17 @@ description: >-
   an in-runtime governance and policy-enforcement engine aligned to the EU AI Act, and Akka Specify, a delivered
   spec-driven path onto the same platform. lightbend.com now redirects to akka.io; the JVM library API surface is
   catalogued separately in the api-evangelist akka repository.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: unknown
