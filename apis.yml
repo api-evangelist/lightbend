@@ -48,15 +48,15 @@ x-rebranded-to: akka
 x-see-also: https://raw.githubusercontent.com/api-evangelist/akka/refs/heads/main/apis.yml
 tags:
   - Company
-  - Ai Infrastructure
-  - Agentic Ai
+  - AI Infrastructure
+  - Agentic AI
   - Actor Model
   - Distributed Systems
   - Reactive
   - Java
   - Scala
   - Orchestration
-  - Ai Governance
+  - AI Governance
 tags_raw:
   - Company
   - Ai Infrastructure
