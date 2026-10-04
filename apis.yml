@@ -49,7 +49,7 @@ x-see-also: https://raw.githubusercontent.com/api-evangelist/akka/refs/heads/mai
 tags:
   - Company
   - AI Infrastructure
-  - Agentic AI
+  - AI Agents
   - Actor Model
   - Distributed Systems
   - Reactive
@@ -68,6 +68,7 @@ tags_raw:
   - Scala
   - Orchestration
   - Ai Governance
+  - Agentic AI
 apis: []
 maintainers:
   - FN: Kin Lane
