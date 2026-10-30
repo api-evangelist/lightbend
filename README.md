@@ -64,27 +64,104 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Lightbend, Inc. (dba Akka) is the company behind the Akka agentic systems platform. Founded as Typesafe by the creators of the Scala language and the Akka actor toolkit, the company built the JVM reactive stack — Akka actors, Akka Streams, Akka HTTP, Akka gRPC, Akka Cluster and Play Framework — before pivoting to a full-stack platform for production agentic AI and rebranding to Akka.
+Lightbend, Inc. (dba Akka) is the company behind the Akka agentic systems platform. Founded as Typesafe by the creators of the Scala language and the Akka actor toolkit, the company built the JVM reactive stack — Akka actors, Akka Streams, Akka HTTP, Akka gRPC, Akka Cluster and Play Framework — before pivoting to a full-stack platform for production agentic AI and rebranding to Akka. The current product line covers the Akka SDK (agents, orchestration, memory, streaming, HTTP/gRPC/MCP endpoints), Akka Automated Operations for multi-region deployment and operations, an in-runtime governance and policy-enforcement engine aligned to the EU AI Act, and Akka Specify, a delivered spec-driven path onto the same platform. lightbend.com now redirects to akka.io; the JVM library API surface is catalogued separately in the api-evangelist akka repository.
 
-**lightbend.com now redirects to akka.io.** The JVM library API surface is catalogued separately in the [api-evangelist/akka](https://github.com/api-evangelist/akka) repository; this repository is the company profile for the legal entity Lightbend, Inc.
+**Areas:** Company · AI Infrastructure · AI Agents · Actor Model · Distributed Systems · Reactive · Java · Scala · Orchestration · AI Governance
 
-Backed by: bain-capital-ventures — https://akka.io/
+## Lightbend on APIs.io
 
-## Artifacts
+Everything profiled for Lightbend is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/lightbend/](https://apis.io/providers/lightbend/)** — or go straight to one of the APIs or properties below.
 
-| Artifact | File |
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [akka](https://apis.io/servers/lightbend/akka/)
+
+#### Security (4)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Lightbend Authentication](https://apis.io/security/lightbend/lightbend-authentication/)
+- [Lightbend Domain Security](https://apis.io/security/lightbend/lightbend-domain-security/)
+- [Lightbend Trust Center](https://apis.io/security/lightbend/lightbend-trust-center/)
+- [Lightbend Vulnerability Disclosure](https://apis.io/security/lightbend/lightbend-vulnerability-disclosure/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://akka.io/)
+- [Documentation](https://doc.akka.io/)
+- [Getting started](https://doc.akka.io/getting-started/index.html)
+- [API reference](https://doc.akka.io/reference/cli/akka-cli/index.html)
+- [Sign up](https://console.akka.io/login)
+- [Support](https://support.akka.io/portal/en/home)
+- [Changelog](https://doc.akka.io/reference/release-notes.html)
+- [Blog](https://akka.io/blog)
+- [Security](https://doc.akka.io/reference/security-announcements/)
+- [Compliance](https://trust.akka.io/)
+- [Trust centre](https://trust.akka.io/)
+- [Terms of service](https://akka.io/legal/terms-of-use)
+- [Privacy policy](https://akka.io/legal/privacy)
+- [GitHub](https://github.com/akka)
+- [Status](https://status.akka.io/)
+
+## API Evangelist rating
+
+**Kin Score 40.6** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
 |---|---|
-| llms.txt | `llms/lightbend-llms.txt` |
-| MCP server | `mcp/lightbend-mcp.yml` |
-| CLI | `cli/lightbend-cli.yml` |
-| Packages / SDKs | `packages/lightbend-packages.yml` |
-| Well-known | `well-known/lightbend-well-known.yml` |
-| Authentication | `authentication/lightbend-authentication.yml` |
-| Conventions | `conventions/lightbend-conventions.yml` |
-| Conformance | `conformance/lightbend-conformance.yml` |
-| Lifecycle | `lifecycle/lightbend-lifecycle.yml` |
-| Changelog | `changelog/lightbend-changelog.yml` |
-| Sandbox | `sandbox/lightbend-sandbox.yml` |
-| Domain security | `security/lightbend-domain-security.yml` |
-| Trust center | `security/lightbend-trust-center.yml` |
-| Vulnerability disclosure | `security/lightbend-vulnerability-disclosure.yml` |
+| Discoverability | 55.0 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 52.6 |
+| Developer ergonomics | 78.6 |
+| Access clarity | 36.8 |
+
+**Agent readiness 6.0** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | documented (partial credit) |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+
+**Regulatory alignment 35.3** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/lightbend/](https://apis.io/providers/lightbend/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Lightbend: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/lightbend/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
